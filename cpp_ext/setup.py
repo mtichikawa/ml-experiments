@@ -12,6 +12,7 @@ ext = Extension(
 
     include_dirs=[pybind11.get_include()],
 
+    # -O3: aggressive optimization; -march=native: use host CPU instruction set
     extra_compile_args=["-O3", "-march=native", "-std=c++17"],
 
     language="c++",
