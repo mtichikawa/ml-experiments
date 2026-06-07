@@ -16,7 +16,8 @@ py::array_t<double> rolling_mean(py::array_t<double> input, int window) {
     double* in_ptr = static_cast<double*>(buf.ptr);
     double* out_ptr = static_cast<double*>(rbuf.ptr);
 
-    // Fill first window-1 elements with NaN
+    // First window-1 elements have insufficient data — fill with NaN to match
+    // pandas.Series.rolling() behavior (min_periods=window by default)
     for (int i = 0; i < window - 1 && i < n; ++i)
         out_ptr[i] = std::numeric_limits<double>::quiet_NaN();
 
