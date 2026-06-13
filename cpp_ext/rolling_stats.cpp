@@ -29,7 +29,7 @@ py::array_t<double> rolling_mean(py::array_t<double> input, int window) {
         sum += in_ptr[i];
     out_ptr[window - 1] = sum / window;
 
-    // Slide the window
+    // Slide: O(1) per step — add new element, subtract oldest
     for (int i = window; i < n; ++i) {
         sum += in_ptr[i] - in_ptr[i - window];
         out_ptr[i] = sum / window;
