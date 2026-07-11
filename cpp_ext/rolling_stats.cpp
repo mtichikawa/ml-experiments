@@ -8,6 +8,7 @@ namespace py = pybind11;
 
 py::array_t<double> rolling_mean(py::array_t<double> input, int window) {
     auto buf = input.request();
+    // Reject 2-D+ arrays early — silent broadcasting would give wrong results
     if (buf.ndim != 1)
         throw std::runtime_error("Input must be 1-D");
     int n = buf.shape[0];
