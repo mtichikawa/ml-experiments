@@ -23,3 +23,5 @@ A running notebook collection — model comparisons, dataset explorations, and p
 ---
 
 **Stack:** Python · scikit-learn · XGBoost · LightGBM · PyTorch · pandas · matplotlib
+
+> _Note: building the C++ extensions requires a C++17 compiler and pybind11 development headers. On macOS the system clang is sufficient; on Linux install `python3-dev` and `g++` ≥ 9. Run `pip install -e .` from the repo root to compile and install in editable mode._
