@@ -6,10 +6,5 @@ seaborn
 scikit-learn
 xgboost
 lightgbm
-torch
-transformers
-datasets
-scipy
-statsmodels
 jupyterlab
 ipykernel
